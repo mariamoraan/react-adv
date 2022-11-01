@@ -1,4 +1,5 @@
 import { ProductButtons, ProductCard, ProductImage, ProductTitle } from '../components';
+import '../styles/custom-styles.css';
 
 
 const product = {
@@ -21,16 +22,44 @@ export const ShoppingPage = () => {
                 flexWrap: 'wrap'
             }}>
 
-                <ProductCard product={ product }>
-                    <ProductCard.Image />
-                    <ProductCard.Title title={ 'Hola Mundo' } />
-                    <ProductCard.Buttons  />
+                <ProductCard product={ product } className="bg-dark" >
+                    <ProductCard.Image className="custom-image" />
+                    <ProductCard.Title title={ 'Hola Mundo' } className="text-white text-bold" />
+                    <ProductCard.Buttons className="custom-buttons" />
                 </ProductCard>
 
-                <ProductCard product={ product }>
-                    <ProductImage />
-                    <ProductTitle />
-                    <ProductButtons />
+                <ProductCard 
+                product={ product }
+                className="bg-dark"
+                >
+                    <ProductImage className="custom-image" />
+                    <ProductTitle className="text-white text-bold" />
+                    <ProductButtons className="custom-buttons" />
+                </ProductCard>
+
+                <ProductCard 
+                product={ product }
+                style={{
+                    background: 'blue',
+                }}
+                >
+                    <ProductImage 
+                    style={{
+                        boxShadow: 'rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px',
+                    }} 
+                    />
+                    <ProductTitle 
+                    style={{
+                        fontWeight: 'bolder',
+                    }}
+                    />
+                    <ProductButtons 
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                    }}
+                    />
                 </ProductCard>
             </div>
         </div>
